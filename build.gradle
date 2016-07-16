@@ -1,0 +1,16 @@
+apply plugin: 'java'
+
+repositories {
+    jcenter()
+    maven { url "https://jitpack.io" }
+}
+
+// Declare variables
+ext {
+}
+
+// In this section you declare the dependencies for your production and test code
+dependencies {
+    testCompile 'junit:junit:4.12'
+    compile 'com.github.Alban42:alban42-fwk:-SNAPSHOT'
+}
