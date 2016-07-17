@@ -12,12 +12,16 @@ allprojects {
         jcenter()
         maven { url "https://jitpack.io" }
     }
+
+    configurations.all {
+        resolutionStrategy.cacheChangingModulesFor 1, 'minutes'
+    }
 }
 
 project(":common") {
     apply plugin: "java"
 
-    version 'SNAPSHOT'
+    version "-SNAPSHOT"
 
     dependencies {
         compile "com.github.Alban42:alban42-fwk:$alban42FWK"
@@ -26,7 +30,7 @@ project(":common") {
 project(":mcp") {
     apply plugin: "java"
 
-    version 'SNAPSHOT'
+    version "-SNAPSHOT"
 
     dependencies {
         compile project(":common")
@@ -35,9 +39,12 @@ project(":mcp") {
 project(":user") {
     apply plugin: "java"
 
-    version 'SNAPSHOT'
+    version "-SNAPSHOT"
 
     dependencies {
         compile project(":common")
     }
 }
+
+//apply plugin: 'application'
+//mainClassName = "com.mkyong.DateUtils"
