@@ -1,16 +1,43 @@
-apply plugin: 'java'
+allprojects {
+    apply plugin: "idea"
 
-repositories {
-    jcenter()
-    maven { url "https://jitpack.io" }
+    group 'com.alban42'
+
+    ext {
+        appName = "PeerChat"
+        alban42FWK = "-SNAPSHOT"
+    }
+
+    repositories {
+        jcenter()
+        maven { url "https://jitpack.io" }
+    }
 }
 
-// Declare variables
-ext {
-}
+project(":common") {
+    apply plugin: "java"
 
-// In this section you declare the dependencies for your production and test code
-dependencies {
-    testCompile 'junit:junit:4.12'
-    compile 'com.github.Alban42:alban42-fwk:-SNAPSHOT'
+    version 'SNAPSHOT'
+
+    dependencies {
+        compile "com.github.Alban42:alban42-fwk:$alban42FWK"
+    }
+}
+project(":mcp") {
+    apply plugin: "java"
+
+    version 'SNAPSHOT'
+
+    dependencies {
+        compile project(":common")
+    }
+}
+project(":user") {
+    apply plugin: "java"
+
+    version 'SNAPSHOT'
+
+    dependencies {
+        compile project(":common")
+    }
 }

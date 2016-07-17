@@ -17,3 +17,8 @@ include 'services:webservice'
 */
 
 rootProject.name = 'alban42-peerchat'
+
+include 'common'
+include 'mcp'
+include 'user'
+
