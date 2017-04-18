@@ -18,7 +18,7 @@ public class UserServer {
         final NetworkServerListener listener = new UserServerListener();
         final ClassRegister register = new PeerRegister();
 
-        server = new NetworkServer(tcpPort, null, listener, register);
+        server = new NetworkServer(tcpPort, tcpPort + 1, listener, register);
 
         server.start();
 

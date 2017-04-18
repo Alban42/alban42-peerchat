@@ -21,3 +21,4 @@ gradlew.bat
 mcp/build/
 user/build/
 /.idea/
+/.project

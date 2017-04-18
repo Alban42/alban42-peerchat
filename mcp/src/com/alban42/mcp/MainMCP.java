@@ -24,6 +24,7 @@ public class MainMCP {
             }
         }
 
+        scanIn.close();
         server.stop();
     }
 }

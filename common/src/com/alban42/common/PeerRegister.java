@@ -20,9 +20,9 @@ public class PeerRegister extends ClassRegister {
         final List<Class> result = new ArrayList<>(0);
         // Adding new classes.
 
+        result.add(BigInteger.class);
         result.add(Key.class);
         result.add(User.class);
-        result.add(BigInteger.class);
         result.add(StatusPacket.class);
 
         return result;
